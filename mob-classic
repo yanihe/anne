@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8" />
+	<!-- UC默认竖屏 ，UC强制全屏 -->
+	<meta name="full-screen" content="yes"/>
+	<meta name="browsermode" content="application"/>
+	<!-- QQ强制竖屏 QQ强制全屏 -->
+	<meta name="x5-orientation" content="portrait"/>
+	<meta name="x5-fullscreen" content="true"/>
+	<meta name="x5-page-mode" content="app"/>
+	<meta name="HandheldFriendly" content="true">
+	<meta name="MobileOptimized" content="320">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name='apple-touch-fullscreen' content='yes'>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>橙光游戏中心-经典游戏列表</title>
+	<meta name="keywords" content="橙光游戏" />
+	<meta name="description" content="经典游戏列表" />
+	<link rel="stylesheet" type="text/css" href="./mob-classic_files/header.css">
+	<link type="text/css" rel="stylesheet" href="./mob-classic_files/common.css">
+	<link type="text/css" rel="stylesheet" href="./mob-classic_files/iconfont.css">
+	<script src="./mob-classic_files/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="./mob-classic_files/pageStyle.css">
+	<link rel="stylesheet" type="text/css" href="./mob-classic_files/css/classic_mob.css">
+</head>
+<body>
+	<div class="header-bar">
+		<header>
+			<div class="back"><span class="back-ico"><img id="btn-back" src="./mob-classic_files/head_back_cal.png" alt=""></span></div>
+			<div class="page-title"><div class="home_title">橙光经典</div></div>
+		</header>
+		<script type="text/javascript">
+			var mUrl, backUrl, backArr, backHost;
+			$('#btn-back').click(function(){
+				mUrl = "http://m.66rpg.com";
+				// 获取上一页域名
+				backUrl = document.referrer;
+				backArr = backUrl.split("/");
+				backHost = 'http://' + backArr[2];
+				// 返回上一级域名是M站的话，返回上一页，不是调回首页
+				if(backHost.indexOf(mUrl) >= 0){
+					// 针对支付宝充值成功回调单独判断
+					if(backUrl.indexOf('alipay') >= 0) {
+						window.location.href = '/list/index';
+						return false;
+					}
+					window.history.back();		
+				}else{
+					window.location.href = '/list/index';		
+				}
+			});
+	
+		</script>
+	</div>
+	<section id="content">
+		<div class="classic_nav">
+			<div class="classic_nav_con">
+				<ul class="nav_ul clearfix">
+					<li class="active">默认</li>
+					<li>最新</li>
+					<li class="flow-sort">鲜花<i></i></li>
+					<li class="flow-sort">字数<i></i></li>
+				</ul>
+				<span class="down_btn">&nbsp;</span>
+				<div class="nav_down off">
+				<div class="nav_down_con">
+					<!--<span class="down_tit">等级</span>
+					<ul class="level_ul clearfix">
+						<li class="active" data-level="0"><a href="javascript:void(0)">全部</a></li>
+						<li data-level="1"><a href="javascript:void(0)">钻石级</a></li>
+						<li data-level="2"><a href="javascript:void(0)">白金级</a></li>
+						<li data-level="3"><a href="javascript:void(0)">黄金级</a></li>
+						<li data-level="4"><a href="javascript:void(0)">白银级</a></li>
+						<li data-level="5"><a href="javascript:void(0)">青铜级</a></li>
+						<li data-level="6"><a href="javascript:void(0)">经典候选</a></li>
+					</ul>-->
+					<span class="down_tit">分类</span>
+					<ul class="cate_ul clearfix">
+						<li class="active" data-cate="0"><a href="javascript:void(0)">全部</a></li>
+						<li data-cate="1"><a href="javascript:void(0)">古风</a></li>
+						<li data-cate="2"><a href="javascript:void(0)">现代</a></li>
+						<li data-cate="3"><a href="javascript:void(0)">架空</a></li>
+						<li data-cate="4"><a href="javascript:void(0)">非遗</a></li>
+					</ul>
+					<ul class="search_classic clearfix">
+						<li class="reset_btn"><a href="javascript:void(0)">重置</a></li>
+						<li class="confirm_btn"><a href="javascript:void(0)">确定</a></li>
+					</ul>
+				</div>
+			</div>
+			</div>
+			<div class="classic_mask off"></div>
+		</div>
+			
+		<!--gamelist-->
+		<div class="classic_result">
+			<ul class="mob-world-game clearfix">
+					<li>
+						<a class="mob-world-game-pic" href="/game/509357">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>5.8万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>5593</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/509357">
+								<span class="mob-game-name">丑男变美女（更新新商城）</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：是所疯人院</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/227798">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>4.0万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>749</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/227798">
+								<span class="mob-game-name">【金庸同人】赤练仙子李莫愁</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：哆啦n梦</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/509357">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>5.8万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>5593</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/509357">
+								<span class="mob-game-name">丑男变美女（更新新商城）</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：是所疯人院</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/227798">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>4.0万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>749</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/227798">
+								<span class="mob-game-name">【金庸同人】赤练仙子李莫愁</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：哆啦n梦</span>
+							</a>
+						</p>
+					</li>
+					<li>
+						<a class="mob-world-game-pic" href="/game/509357">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>5.8万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>5593</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/509357">
+								<span class="mob-game-name">丑男变美女（更新新商城）</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：是所疯人院</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/227798">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>4.0万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>749</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/227798">
+								<span class="mob-game-name">【金庸同人】赤练仙子李莫愁</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：哆啦n梦</span>
+							</a>
+						</p>
+					</li>
+					<li>
+						<a class="mob-world-game-pic" href="/game/509357">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>5.8万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>5593</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/509357">
+								<span class="mob-game-name">丑男变美女（更新新商城）</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：是所疯人院</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/227798">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>4.0万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>749</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/227798">
+								<span class="mob-game-name">【金庸同人】赤练仙子李莫愁</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：哆啦n梦</span>
+							</a>
+						</p>
+					</li>
+					<li>
+						<a class="mob-world-game-pic" href="/game/509357">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>5.8万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>5593</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/509357">
+								<span class="mob-game-name">丑男变美女（更新新商城）</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：是所疯人院</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/227798">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>4.0万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>749</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/227798">
+								<span class="mob-game-name">【金庸同人】赤练仙子李莫愁</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：哆啦n梦</span>
+							</a>
+						</p>
+					</li>
+				<li>
+						<a class="mob-world-game-pic" href="/game/509357">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>5.8万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>5593</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/509357">
+								<span class="mob-game-name">丑男变美女（更新新商城）</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：是所疯人院</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/227798">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>4.0万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>749</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/227798">
+								<span class="mob-game-name">【金庸同人】赤练仙子李莫愁</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：哆啦n梦</span>
+							</a>
+						</p>
+					</li>
+				<li>
+						<a class="mob-world-game-pic" href="/game/509357">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>5.8万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>5593</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/509357">
+								<span class="mob-game-name">丑男变美女（更新新商城）</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：是所疯人院</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/227798">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>4.0万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>749</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/227798">
+								<span class="mob-game-name">【金庸同人】赤练仙子李莫愁</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：哆啦n梦</span>
+							</a>
+						</p>
+					</li>
+				<li>
+						<a class="mob-world-game-pic" href="/game/509357">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>5.8万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>5593</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/509357">
+								<span class="mob-game-name">丑男变美女（更新新商城）</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：是所疯人院</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/227798">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>4.0万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>749</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/227798">
+								<span class="mob-game-name">【金庸同人】赤练仙子李莫愁</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：哆啦n梦</span>
+							</a>
+						</p>
+					</li>
+				<li>
+						<a class="mob-world-game-pic" href="/game/509357">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>5.8万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>5593</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/509357">
+								<span class="mob-game-name">丑男变美女（更新新商城）</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：是所疯人院</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/227798">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>4.0万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>749</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/227798">
+								<span class="mob-game-name">【金庸同人】赤练仙子李莫愁</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：哆啦n梦</span>
+							</a>
+						</p>
+					</li>
+				<li>
+						<a class="mob-world-game-pic" href="/game/509357">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>5.8万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>5593</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/509357">
+								<span class="mob-game-name">丑男变美女（更新新商城）</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：是所疯人院</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/227798">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>4.0万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>749</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/227798">
+								<span class="mob-game-name">【金庸同人】赤练仙子李莫愁</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：哆啦n梦</span>
+							</a>
+						</p>
+					</li>
+				<li>
+						<a class="mob-world-game-pic" href="/game/509357">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/1b5032623a28505fa86713299a56d963_65.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>5.8万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>5593</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/509357">
+								<span class="mob-game-name">丑男变美女（更新新商城）</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：是所疯人院</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/227798">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/d92536e48677e836adca44acb6f4de0f_98.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>4.0万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>749</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/227798">
+								<span class="mob-game-name">【金庸同人】赤练仙子李莫愁</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：哆啦n梦</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/186">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/b2e1c40c5544477e420838ad09b97a8c_2.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/b2e1c40c5544477e420838ad09b97a8c_2.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>7956</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>1144</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/186">
+								<span class="mob-game-name">青蛇奇缘</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：雪狐火的猫</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/12499">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/86e75e2f3bed7756d1cf61e49fad4d6e_2091.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/86e75e2f3bed7756d1cf61e49fad4d6e_2091.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>3875</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>76</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/12499">
+								<span class="mob-game-name">【修BUG】半泽直树TDS-逆转的银行家</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：NEW</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/7947">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/c974fcb4238026f3e77df150e1d0e481_2080.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/c974fcb4238026f3e77df150e1d0e481_2080.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>43</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>255</span>
+							<span class="mob-game-bg"></span>
+							
+						</a>
+						<p>
+							<a href="/game/7947">
+								<span class="mob-game-name">Fate·Card Night【未更】</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：NEW</span>
+							</a>
+						</p>
+					</li>
+				
+					<li>
+						<a class="mob-world-game-pic" href="/game/503555">
+							<img class="game-surface-img" src="http://pic.cgyouxi.com/orange/title/1e4d785db5465cea644e5b42ad7734b2_36.jpg!n600" data-original="http://pic.cgyouxi.com/orange/title/1e4d785db5465cea644e5b42ad7734b2_36.jpg!n600">
+							<span class="mob-game-word"><i class="mob-game-word-ico">字</i>3.7万</span>
+							<span class="mob-game-flower"><i class="mob-game-flower-ico"></i>115</span>
+							<span class="mob-game-bg"></span>
+							
+							
+							
+						</a>
+						<p>
+							<a href="/game/503555">
+								<span class="mob-game-name">【青丘狐】奈何为狼不是狐(完结啦，撒花撒花）</span>
+							</a>
+							<a href="javascript:;">
+								<span class="mob-game-author">作者：画容不易</span>
+							</a>
+						</p>
+					</li>
+				</ul>
+			<div class="loading">
+				<span>正在加载...</span>
+			</div>
+		
+		</div>
+		<!--gamelist end-->
+	</section>		
+	<footer class="footer">
+		<div>(C)<a href="http://m.test.66rpg.com/list/index">橙光游戏中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<i class="iconfont"></i> <a href="http://m.test.66rpg.com/redirect/complaints_guide">权利保护投诉指引</a></div>
+	</footer>
+	<script type="text/javascript" src="./mob-classic_files/jquery.lazyload.min.js"></script>
+	<script src="./mob-classic_files/common.js"></script>
+	<script type="text/javascript" src="./mob-classic_files/template.js"></script>
+	<script type="text/javascript" src="./mob-classic_files/js/classic_mob.js"></script>
+</body>
+</html>
